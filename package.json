@@ -1,0 +1,9 @@
+{
+  "name": "jNotes-Server",
+  "version": "1.0.0",
+  "description": "Server software for simple notes application",
+  "author": "Steve Marsh",
+  "dependencies": {
+    "hapi": "*"
+  }
+}
