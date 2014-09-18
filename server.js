@@ -6,7 +6,7 @@ var authObj = require('./auth.js');
 var note = new noteObj.note();
 var auth = new authObj.auth('user','pass');
 var routes = new routesObj.route({note:note,auth:auth});
-var server = new Hapi.Server(8888);
+var server = new Hapi.Server(8888, {cors:true});
 
 /*   Add Routes   */
 server = routes.addRoutes(server);
