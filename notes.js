@@ -71,6 +71,25 @@ note.prototype.getNoteRoute = function(server) {
 	});
 	return server;
 };
+note.prototype.editNote = function(index, title, description) {
+	this.notes[index].title = title;
+	this.notes[index].description = description;
+	return true;
+}
+note.prototype.editNoteRoute = function(server) {
+	var self = this;
+	server.route({
+		method: 'GET',
+		path: '/editNote/{index}/{title}/{description}',
+		handler: function(request, reply) {
+			var index = request.params.index,
+			title = request.params.title,
+			description = request.params.description;
+			reply(self.editNote(index,title,description));
+		}
+	});
+	return server;
+}
 
 
 module.exports.note = note;

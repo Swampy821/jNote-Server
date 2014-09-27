@@ -9,6 +9,7 @@ route.prototype.addRoutes = function(server) {
 	server = this.note.removeNoteRoute(server);
 	server = this.note.getNoteRoute(server);
 	server = this.auth.addAuthRoute(server);
+	server = this.note.editNoteRoute(server);
 	return server;
 };
 
